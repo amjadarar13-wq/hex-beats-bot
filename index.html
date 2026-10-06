@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEX Beats — Discord Music Bot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background: #0b0c10;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .background-glow {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(124, 77, 255, 0.35) 0%, rgba(0, 229, 255, 0) 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+        }
+
+        .card {
+            position: relative;
+            z-index: 1;
+            background: rgba(22, 24, 40, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px 30px;
+            border-radius: 24px;
+            text-align: center;
+            max-width: 450px;
+            width: 100%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .logo {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 3px solid #00e5ff;
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        h1 span {
+            color: #ffe57f;
+        }
+
+        p {
+            color: #a3a8c3;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 15px;
+            border-radius: 12px;
+        }
+
+        .feature-item {
+            font-size: 0.9rem;
+            color: #e0e0e0;
+        }
+
+        .btn {
+            display: inline-block;
+            width: 100%;
+            background: linear-gradient(135deg, #7c4dff, #00e5ff);
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 700;
+            padding: 14px;
+            border-radius: 14px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(124, 77, 255, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(0, 229, 255, 0.5);
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #6c7293;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background-glow"></div>
+
+    <div class="card">
+        <!-- ضع اسم أو رابط صورة اللوجو هنا -->
+        <img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f31c.svg" alt="HEX Beats Logo" class="logo">
+        
+        <h1>HEX <span>Beats</span> 🌙</h1>
+        <p>البوت الموسيقي الرسمي لسيرفر HEX. بث صوتي عالي الدقة، سرعة فائقة، ونظام قائمة انتظار متكامل لتجربة لا مثيل لها.</p>
+
+        <div class="features">
+            <div class="feature-item">🎧 صوت HQ</div>
+            <div class="feature-item">⚡ استجابة فورية</div>
+            <div class="feature-item">📜 دعم Queue</div>
+        </div>
+
+        <!-- ⚠️ استبدل الرابط أدناه برابط إضافة البوت الخاص بك من Discord Developer Portal -->
+        <a href="https://discord.com/oauth2/authorize?client_id=1550459326638854306" class="btn" target="_blank">
+            ➕ إضافة البوت إلى ديسكورد
+        </a>
+
+        <div class="footer">
+            Powered by HEX Server © 2026
+        </div>
+    </div>
+
+</body>
+</html>
