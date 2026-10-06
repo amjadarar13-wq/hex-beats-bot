@@ -4,7 +4,22 @@ from discord.ext import commands
 import yt_dlp
 import asyncio
 from collections import defaultdict
+from flask import Flask
+from threading import Thread
+import os
 
+app = Flask('')
+
+@app.route('/')
+def home():
+    return "HEX Beats Bot is Running!"
+
+def run_web():
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host='0.0.0.0', port=port)
+
+# تشغيل خادم الويب في مسار خلفي منفصل
+Thread(target=run_web).start()
 # --- إعدادات البوت والـ Intents ---
 intents = discord.Intents.default()
 intents.message_content = True
