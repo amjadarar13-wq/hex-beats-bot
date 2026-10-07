@@ -5,30 +5,26 @@ import discord
 from discord import app_commands
 from discord.ext import commands
 import yt_dlp
-import os
-from threading import Thread
 from flask import Flask
 
-# خادم ويب بسيط لربط المنفذ ومنع Render من إيقاف الخدمة
+# ===================================================
+# 1. خادم Flask لإبقاء الخدمة حية على Render
+# ===================================================
 app = Flask('')
-
 
 @app.route('/')
 def home():
-  return 'Bot is alive!'
-
+    return 'Bot is alive!'
 
 def run():
-  port = int(os.environ.get('PORT', 8080))
-  app.run(host='0.0.0.0', port=port)
-
+    port = int(os.environ.get('PORT', 8080))
+    app.run(host='0.0.0.0', port=port)
 
 def keep_alive():
-  t = Thread(target=run)
-  t.start()
+    t = Thread(target=run)
+    t.daemon = True
+    t.start()
 
-
-# تشغيل خادم الويب
 keep_alive()
 
 # ==========================================
