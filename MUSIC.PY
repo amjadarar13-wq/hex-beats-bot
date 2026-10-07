@@ -115,6 +115,14 @@ async def stop(interaction: discord.Interaction):
 # ==========================================
 # 5. تشغيل البوت
 # ==========================================
-DISCORD_TOKEN = os.getenv("DISCORD_TOKEN", "MTU1MDQ1OTMyNjYzODg1NDMwNg.GlxeMJ.LAfQsctTKqW22vwxrAUDyWnDmXkfXjFHoslhqg")
+# ===================================================
+# 5. تشغيل البوت
+# ===================================================
+import os
 
-bot.run("MTU1MDQ1OTMyNjYzODg1NDMwNg.G3gsxX.rWz0FJ6UsoLhtyWdBEbcG-OPHObrEp-Why4Vyw")   
+TOKEN = os.getenv('DISCORD_TOKEN')
+
+if not TOKEN:
+    raise ValueError("لم يتم العثور على DISCORD_TOKEN في متغيرات البيئة!")
+
+bot.run(TOKEN)
