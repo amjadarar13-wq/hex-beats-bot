@@ -1,6 +1,5 @@
 import os
 import asyncio
-from flask import Flask
 from threading import Thread
 import discord
 from discord import app_commands
@@ -10,17 +9,7 @@ import yt_dlp
 # ==========================================
 # 1. خادم Flask لإبقاء الخدمة حية على Render
 # ==========================================
-app = Flask('')
 
-@app.route('/')
-def home():
-    return "HEX Beats is Online and Running!"
-
-def run_web():
-    port = int(os.environ.get("PORT", 8080))
-    app.run(host='0.0.0.0', port=port)
-
-Thread(target=run_web, daemon=True).start()
 
 # ==========================================
 # 2. إعدادات البوت والـ Intents
@@ -46,8 +35,14 @@ YTDL_OPTIONS = {
     'quiet': True,
     'no_warnings': True,
     'default_search': 'ytsearch',
-    'source_address': '0.0.0.0'
+    'source_address': '0.0.0.0',
+    'extractor_args': {
+        'youtube': {
+            'player_client': ['ios', 'android', 'mweb']
+        }
+    }
 }
+
 
 FFMPEG_OPTIONS = {
     'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5',
@@ -122,4 +117,4 @@ async def stop(interaction: discord.Interaction):
 # ==========================================
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN", "MTU1MDQ1OTMyNjYzODg1NDMwNg.GlxeMJ.LAfQsctTKqW22vwxrAUDyWnDmXkfXjFHoslhqg")
 
-bot.run(DISCORD_TOKEN)
+bot.run("MTU1MDQ1OTMyNjYzODg1NDMwNg.G3gsxX.rWz0FJ6UsoLhtyWdBEbcG-OPHObrEp-Why4Vyw")   
